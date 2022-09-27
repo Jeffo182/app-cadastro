@@ -5,25 +5,25 @@ import Cadastrovazio from "./Cadastrovazio";
 
 class ClientesCadastrados extends Component {
   render() {
-    const { name, email, age } = this.props;
+    const { clientes } = this.props;
     return (
       <>
       {
-        name === '' || email === '' || age === '' ? <Cadastrovazio /> :
+        clientes[0].name === '' || clientes[0].email === '' || clientes[0].age === '' ? <Cadastrovazio /> :
         <div>
         <h1>Clientes Cadastrados</h1>
         <div>
           <p>
             Nome:
-            {name}
+            {clientes[0].name}
             </p>
           <p>
             E-mail:
-            {email}
+            {clientes[0].email}
             </p>
           <p>
             Idade:
-            {age}
+            {clientes[0].age}
           </p>
         </div>
         </div>
