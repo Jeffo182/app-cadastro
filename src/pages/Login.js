@@ -1,5 +1,7 @@
 // input email e senha e botao entrar
 import React, { Component } from 'react';
+import { addLogin } from '../redux/actions'
+import { connect } from 'react-redux';
 
 class Login extends Component {
   state = {
@@ -12,6 +14,12 @@ class Login extends Component {
   }
   handleClick = () => {
     const { history } = this.props;
+    const { email, password } = this.state
+    const { dispatch } = this.props;
+    dispatch(addLogin({
+      email,
+      password,
+    }))
     history.push('/clientes');
   }
   render() {
@@ -47,4 +55,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect()(Login);
