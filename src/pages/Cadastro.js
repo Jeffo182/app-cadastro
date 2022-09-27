@@ -1,5 +1,7 @@
 // nome, idade e email
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addCadastro } from '../redux/actions'
 
 class Cadastro extends Component {
   state = {
@@ -13,6 +15,13 @@ class Cadastro extends Component {
   }
   handleClick = () => {
     const { history } = this.props;
+    const { name, email, age } = this.state;
+    const { dispatch } = this.props;
+    dispatch(addCadastro({
+      name,
+      email,
+      age,
+    }))
     history.push('/login');
   }
   render() {
@@ -58,4 +67,4 @@ class Cadastro extends Component {
   }
 }
 
-export default Cadastro;
+export default connect()(Cadastro);

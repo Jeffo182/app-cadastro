@@ -1,0 +1,2 @@
+export const SALVAR_LOGIN = 'SALVAR_LOGIN';
+export const SALVAR_CADASTRO = 'SALVAR_CADASTRO';
