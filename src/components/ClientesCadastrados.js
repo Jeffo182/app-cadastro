@@ -8,26 +8,31 @@ class ClientesCadastrados extends Component {
     const { clientes } = this.props;
     return (
       <>
-      {
-        clientes[0].name === '' || clientes[0].email === '' || clientes[0].age === '' ? <Cadastrovazio /> :
-        <div>
-        <h1>Clientes Cadastrados</h1>
-        <div>
-          <p>
-            Nome:
-            {clientes[0].name}
-            </p>
-          <p>
-            E-mail:
-            {clientes[0].email}
-            </p>
-          <p>
-            Idade:
-            {clientes[0].age}
-          </p>
-        </div>
-        </div>
-  }
+        {clientes[0].name === "" ||
+        clientes[0].email === "" ||
+        clientes[0].age === "" ? (
+          <Cadastrovazio />
+        ) : (
+          clientes.map((element) => (
+            <div>
+              <h3>Cliente</h3>
+              <div>
+                <p>
+                  Nome:
+                  {element.name}
+                </p>
+                <p>
+                  E-mail:
+                  {element.email}
+                </p>
+                <p>
+                  Idade:
+                  {element.age}
+                </p>
+              </div>
+            </div>
+          ))
+        )}
       </>
     );
   }
