@@ -7,14 +7,14 @@ class ClientesCadastrados extends Component {
   render() {
     const { clientes } = this.props;
     return (
-      <>
+      <div class="clienteform">
         {clientes[0].name === "" ||
         clientes[0].email === "" ||
         clientes[0].age === "" ? (
           <Cadastrovazio />
         ) : (
           clientes.map((element) => (
-            <div>
+            <div class="cliente">
               <h3>Cliente</h3>
               <div>
                 <p>
@@ -33,7 +33,7 @@ class ClientesCadastrados extends Component {
             </div>
           ))
         )}
-      </>
+      </div>
     );
   }
 }

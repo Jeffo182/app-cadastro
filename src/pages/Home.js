@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 class Home extends Component {
   render() {
     return (
-      <>
-        <div>
-          <Link to="/login">Login</Link>
-        </div>
-        <div>
-          <Link to="/cadastro">Cadastrar cliente</Link>
-        </div>
-      </>
+      <div class="alinharHome">
+      <div class="clienteform">
+        <Link class="txt_homelink" to="/login">
+          Login
+        </Link>
+        <Link class="txt_homelink" to="/cadastro">
+          Cadastrar cliente
+        </Link>
+      </div>
+      </div>
     );
   }
 }
